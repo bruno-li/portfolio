@@ -20,18 +20,6 @@ $responsive550: 550px;
 $responsive400: 400px;
 $responsive350: 350px;
 
-@mixin arrowsBreakPoint {
-	@media (max-width: #{$arrowsBreakPoint}) {
-		@content;
-	}
-}
-
-@mixin arrowsDisappear {
-	@media (max-width: #{$arrowsDisappear}) {
-		@content;
-	}
-}
-
 @mixin responsive1920 {
 	@media (min-width: #{$responsive1920}) {
 		@content;
@@ -73,7 +61,7 @@ body {
 	background-color: color(bgColor);
 	color: color(textColor);
 	font-family: $font-text;
-	overflow: hidden;
+	// overflow: hidden;
 
 	// QUOTE
 	#quote {
@@ -86,6 +74,7 @@ body {
 		text-align: center;
 		width: 100%;
 		animation: quoteText 3s ease forwards;
+
 		h2 {
 			font-size: 22px;
 			font-weight: 400;
@@ -120,15 +109,6 @@ body {
 		a {
 			font-size: 22px;
 		}
-		.btn-link {
-			width: 140px;
-			font-size: 20px;
-		}
-		input,
-		textarea,
-		#submitBtn {
-			font-size: 18px;
-		}
 	}
 }
 
@@ -153,7 +133,7 @@ nav {
 	z-index: 2;
 	transition: 3.2s ease;
 
-	// Links
+	// Nav Links
 	a {
 		font-family: $font-text;
 		text-decoration: none;
@@ -161,13 +141,12 @@ nav {
 		background-color: #010110;
 		transition: 0.2s ease;
 	}
-
 	a:hover {
 		color: color(highlightColor);
 		text-decoration: none;
 	}
 
-	// List items
+	// NavList items
 	ul {
 		list-style-type: none;
 		display: flex;
@@ -176,11 +155,6 @@ nav {
 			margin: 0 15px;
 			padding: 3px;
 		}
-	}
-
-	@include responsive550 {
-		justify-content: center;
-		margin: 0;
 	}
 }
 
@@ -201,7 +175,7 @@ nav.active__nav {
 	flex-direction: column;
 	opacity: 0;
 	transition: 1.5s ease;
-	visibility: hidden;
+	// visibility: hidden;
 }
 
 // Title
@@ -218,6 +192,24 @@ nav.active__nav {
 	flex-wrap: wrap;
 	height: 90vh;
 
+	h1 {
+		font-family: $font-text;
+		font-weight: 700;
+		font-size: 55px;
+		text-shadow: 4px 4px #04fbff50;
+		letter-spacing: 1px;
+
+		.highlighted {
+			font-family: $font-text;
+			font-weight: 700;
+			color: color(highlightColor);
+		}
+		@include responsive400 {
+			font-size: 40px;
+		}
+	}
+
+	// polygon background
 	.polygon__path {
 		position: absolute;
 		left: 0;
@@ -239,10 +231,12 @@ nav.active__nav {
 	#main-left-side {
 		flex-basis: 50%;
 		color: color(textColor);
+
 		@include responsive550 {
+			// border: 10px solid red;
+			margin-top: 150px;
 			flex-basis: 100%;
 			text-align: center;
-
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -250,19 +244,12 @@ nav.active__nav {
 		}
 	}
 	// Title
-	h1 {
-		font-family: $font-text;
-		font-weight: 700;
-		font-size: 55px;
-		text-shadow: 4px 4px #04fbff50;
-		letter-spacing: 1px;
-
-		.highlighted {
-			font-family: $font-text;
-			color: color(highlightColor);
-		}
-		@include responsive400 {
-			font-size: 40px;
+	#main-right-side {
+		margin-left: 25px;
+		// border: 10px solid red;
+		img {
+			width: 175px;
+			height: 175px;
 		}
 	}
 }
@@ -277,7 +264,6 @@ nav.active__nav {
 	80% {
 		opacity: 1;
 	}
-
 	100% {
 		opacity: 0;
 	}

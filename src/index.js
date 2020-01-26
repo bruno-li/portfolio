@@ -12,15 +12,19 @@ window.addEventListener('load', () => {
 // Display and animate elements after quote animation is finished
 const quote = document.querySelector('#quote');
 const container = document.querySelector('#container');
+const nav = document.querySelector('#nav__links');
 
 // Wait for the quote animation to end
 quote.addEventListener('animationend', displayElements);
 
-// Display the elements - container - after quote's animation is finished
+// Display the elements - container and nav - after quote's animation is finished
 function displayElements() {
+	// add class to display nav
+	nav.classList.add('display__nav');
 	document.body.style.overflow = 'unset';
 
 	setTimeout(() => {
 		container.classList.add('active__container');
+		nav.classList.add('active__nav');
 	}, 50);
 }

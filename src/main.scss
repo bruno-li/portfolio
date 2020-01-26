@@ -1,2 +1,233 @@
 // vendor CSS
 @import "~bootstrap/scss/bootstrap";
+
+// Colors
+$colors: (bgColor: #101011, textColor: #6db4f2, highlightColor: #dedede);
+
+@function color($colorName) {
+	@return map-get($colors, $colorName);
+}
+//Font
+$font-text: 'Montserrat', sans-serif;
+
+// Custom values
+$center: translate(-50%, -50%);
+
+// Querries for responsiveness
+$responsive1920: 1920px;
+$responsive600: 600px;
+$responsive550: 550px;
+$responsive400: 400px;
+$responsive350: 350px;
+
+@mixin arrowsBreakPoint {
+	@media (max-width: #{$arrowsBreakPoint}) {
+		@content;
+	}
+}
+
+@mixin arrowsDisappear {
+	@media (max-width: #{$arrowsDisappear}) {
+		@content;
+	}
+}
+
+@mixin responsive1920 {
+	@media (min-width: #{$responsive1920}) {
+		@content;
+	}
+}
+
+@mixin responsiveTablets {
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin responsive600 {
+	@media (max-width: #{$responsive600}) {
+		@content;
+	}
+}
+
+@mixin responsive550 {
+	@media (max-width: #{$responsive550}) {
+		@content;
+	}
+}
+
+@mixin responsive400 {
+	@media (max-width: #{$responsive400}) {
+		@content;
+	}
+}
+
+@mixin responsive350 {
+	@media (max-width: #{$responsive350}) {
+		@content;
+	}
+}
+
+/**** DOM *****/ ///
+body {
+	background-color: color(bgColor);
+	color: color(textColor);
+	font-family: $font-text;
+	overflow: hidden;
+
+	// QUOTE
+	#quote {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: $center;
+		font-family: $font-text;
+		opacity: 0;
+		text-align: center;
+		width: 100%;
+		animation: quoteText 3s ease forwards;
+		h2 {
+			font-size: 22px;
+			font-weight: 400;
+		}
+		h3 {
+			font-size: 20px;
+			font-weight: 400;
+		}
+		.highlighted {
+			font-family: $font-text;
+			font-weight: 400;
+		}
+
+		@include responsive1920 {
+			font-size: 26px;
+		}
+	}
+
+	// Line height for paragraphs
+	p {
+		line-height: 1.5em;
+	}
+
+	.highlighted {
+		color: color(highlightColor);
+		font-family: $font-text;
+		font-weight: 500;
+	}
+
+	@include responsive1920 {
+		p,
+		a {
+			font-size: 22px;
+		}
+		.btn-link {
+			width: 140px;
+			font-size: 20px;
+		}
+		input,
+		textarea,
+		#submitBtn {
+			font-size: 18px;
+		}
+	}
+}
+
+// STOP THE ANIMATIONS FROM RUNNING ON PAGE LOAD
+.preload * {
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+	transition: none !important;
+	animation-play-state: none !important;
+}
+
+// CONTAINER FOR THE SECTIONS
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	opacity: 0;
+	transition: 1.5s ease;
+	visibility: hidden;
+}
+
+// Title
+#container.active__container {
+	opacity: 1;
+	visibility: visible;
+}
+
+// MAIN SECTION
+#main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 90vh;
+
+	.polygon__path {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-clip-path: polygon(0 0, 100% 0, 55% 75%, 0% 100%, 0 0);
+		clip-path: polygon(0 0, 100% 0, 55% 75%, 0% 100%, 0 0);
+		background-color: #010110;
+		z-index: -1;
+		transition: 0.5s ease;
+
+		@include responsive550 {
+			-webkit-clip-path: polygon(0 0, 100% 0, 55% 75%, 0% 100%, 0 0);
+			clip-path: polygon(0 0, 100% 0, 55% 75%, 0% 100%, 0 0);
+		}
+	}
+
+	#main-left-side {
+		flex-basis: 50%;
+		color: color(textColor);
+		@include responsive550 {
+			flex-basis: 100%;
+			text-align: center;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+	}
+	// Title
+	h1 {
+		font-family: $font-text;
+		font-weight: 700;
+		font-size: 55px;
+		text-shadow: 4px 4px #04fbff50;
+		letter-spacing: 1px;
+
+		.highlighted {
+			font-family: $font-text;
+			color: color(highlightColor);
+		}
+		@include responsive400 {
+			font-size: 40px;
+		}
+	}
+}
+
+@keyframes quoteText {
+	0% {
+		opacity: 0;
+	}
+	60% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}

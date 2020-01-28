@@ -163,7 +163,7 @@ nav.display__nav {
 	display: flex;
 }
 nav.active__nav {
-	transform: translateY(25px);
+	transform: translateY(10px);
 	opacity: 1;
 }
 
@@ -196,6 +196,7 @@ nav.active__nav {
 		font-family: $font-text;
 		font-weight: 700;
 		font-size: 55px;
+		margin: 10px 0;
 		text-shadow: 4px 4px #04fbff50;
 		letter-spacing: 1px;
 
@@ -230,6 +231,7 @@ nav.active__nav {
 
 	#main-left-side {
 		flex-basis: 50%;
+		margin-bottom: 100px;
 		color: color(textColor);
 
 		@include responsive550 {
@@ -246,11 +248,81 @@ nav.active__nav {
 	// Title
 	#main-right-side {
 		margin-left: 25px;
+		margin-bottom: 100px;
+
 		// border: 10px solid red;
 		img {
 			width: 175px;
 			height: 175px;
 		}
+	}
+}
+
+// SKILLS SECTION
+#skills {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	#icons {
+		margin-bottom: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 10px;
+
+		//space between icons
+		* {
+			margin: 10px 5px;
+		}
+
+		// tooltip position
+		a {
+			position: relative;
+			background: transparent;
+		}
+		.tooltip {
+			display: none;
+			min-width: 90px;
+			padding: 5px;
+			color: color(bgColor);
+			font-family: $font-text;
+			font-size: 14px;
+			border-radius: 2px;
+		}
+		// tooltip animation
+		a:hover .tooltip {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			left: -25px;
+			bottom: -40px;
+			background-color: color(highlightColor);
+			animation: tooltip 0.35s ease-in-out forwards;
+		}
+		// triangle from the tooltip
+		.tooltip::before {
+			content: '';
+			width: 15px;
+			height: 15px;
+			z-index: -1;
+			background-color: color(highlightColor);
+			position: absolute;
+			top: -5px;
+			left: 50%;
+			transform: translateX(-50%) rotate(45deg);
+		}
+	}
+
+	h1 {
+		font-family: $font-text;
+		font-size: 50px;
+		color: color(highlightColor);
 	}
 }
 
@@ -266,5 +338,14 @@ nav.active__nav {
 	}
 	100% {
 		opacity: 0;
+	}
+}
+
+@keyframes tooltip {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
 	}
 }

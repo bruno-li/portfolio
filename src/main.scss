@@ -1,4 +1,16 @@
 // vendor CSS
+.carousel {
+	height: 360px;
+}
+.carousel-inner {
+	.carousel-item {
+		img {
+			height: 360px;
+			object-fit: contain;
+		}
+	}
+}
+
 @import "~bootstrap/scss/bootstrap";
 
 // Colors
@@ -12,6 +24,8 @@ $font-text: 'Montserrat', sans-serif;
 
 // Custom values
 $center: translate(-50%, -50%);
+$icon-width: 50px;
+$icon-height: 42px;
 
 // Querries for responsiveness
 $responsive1920: 1920px;
@@ -258,7 +272,7 @@ nav.active__nav {
 	}
 }
 
-// SKILLS SECTION
+/// ******** SKILLS SECTION ********* //
 #skills {
 	text-align: center;
 	display: flex;
@@ -285,6 +299,10 @@ nav.active__nav {
 			position: relative;
 			background: transparent;
 		}
+		img {
+			width: $icon-width;
+			height: $icon-height;
+		}
 		.tooltip {
 			display: none;
 			min-width: 90px;
@@ -300,7 +318,7 @@ nav.active__nav {
 			justify-content: center;
 			align-items: center;
 			position: absolute;
-			left: -25px;
+			left: -20px;
 			bottom: -40px;
 			background-color: color(highlightColor);
 			animation: tooltip 0.35s ease-in-out forwards;
@@ -322,6 +340,7 @@ nav.active__nav {
 	h1 {
 		font-family: $font-text;
 		font-size: 50px;
+		font-weight: 700;
 		color: color(highlightColor);
 	}
 }

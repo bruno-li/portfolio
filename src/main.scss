@@ -204,25 +204,7 @@ nav.active__nav {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 90vh;
-
-	h1 {
-		font-family: $font-text;
-		font-weight: 700;
-		font-size: 55px;
-		margin: 10px 0;
-		text-shadow: 4px 4px #04fbff50;
-		letter-spacing: 1px;
-
-		.highlighted {
-			font-family: $font-text;
-			font-weight: 700;
-			color: color(highlightColor);
-		}
-		@include responsive400 {
-			font-size: 40px;
-		}
-	}
+	min-height: 90vh;
 
 	// polygon background
 	.polygon__path {
@@ -249,8 +231,7 @@ nav.active__nav {
 		color: color(textColor);
 
 		@include responsive550 {
-			// border: 10px solid red;
-			margin-top: 150px;
+			margin-top: 70px;
 			flex-basis: 100%;
 			text-align: center;
 			display: flex;
@@ -259,11 +240,28 @@ nav.active__nav {
 			flex-direction: column;
 		}
 	}
+
+	h1 {
+		font-family: $font-text;
+		font-weight: 700;
+		font-size: 55px;
+		margin: 10px 0;
+		text-shadow: 4px 4px #04fbff50;
+		letter-spacing: 1px;
+
+		.highlighted {
+			font-family: $font-text;
+			font-weight: 700;
+			color: color(highlightColor);
+		}
+		@include responsive400 {
+			font-size: 40px;
+		}
+	}
 	// Title
 	#main-right-side {
 		margin-left: 25px;
 		margin-bottom: 100px;
-
 		// border: 10px solid red;
 		img {
 			width: 175px;
@@ -280,7 +278,6 @@ nav.active__nav {
 	justify-content: center;
 	align-items: center;
 	position: relative;
-
 	#icons {
 		margin-bottom: 15px;
 		display: flex;

@@ -1,14 +1,18 @@
 // vendor CSS
-.carousel {
-	height: 360px;
-}
+
 .carousel-inner {
 	.carousel-item {
 		img {
-			height: 360px;
+			height: 500px;
+			width: 500px;
 			object-fit: contain;
 		}
 	}
+}
+
+#carouselExampleFade {
+	height: 500px;
+	width: 500px;
 }
 
 @import "~bootstrap/scss/bootstrap";

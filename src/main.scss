@@ -335,25 +335,6 @@ nav.active__nav {
 	text-align: center;
 	flex-direction: column;
 
-	.carousel-inner {
-		padding-bottom: 130px;
-
-		.carousel-item {
-			img {
-				height: 450px;
-				width: 450px;
-				object-fit: contain;
-			}
-
-			.carousel-caption {
-				bottom: -100px;
-				p {
-					margin-bottom: 5px;
-				}
-			}
-		}
-	}
-
 	.carousel-control-prev {
 		.fa-arrow-left {
 			margin-bottom: 150px;
@@ -364,6 +345,63 @@ nav.active__nav {
 		.fa-arrow-right {
 			margin-bottom: 150px;
 			color: color(textColor);
+		}
+	}
+
+	.carousel-inner {
+		padding-bottom: 200px;
+
+		.carousel-item {
+			img {
+				height: 450px;
+				width: 450px;
+				object-fit: contain;
+			}
+
+			.carousel-caption {
+				bottom: -125px;
+				p {
+					margin-bottom: 5px;
+				}
+				.project__btn {
+					color: color(highlightColor);
+					text-decoration: none;
+					padding: 5px 25px;
+					margin: 0 20px;
+					border: 2px solid color(textColor);
+					font-size: 14px;
+					font-weight: 700;
+					text-align: center;
+				}
+				//  animated button reference - https://codepen.io/sazzad/pen/yNNNJG
+				.animated__btn {
+					position: relative;
+					top: 20px;
+					transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+				}
+				.animated__btn:hover {
+					color: #000 !important;
+					background-color: transparent;
+					text-shadow: nthree;
+				}
+				.animated__btn:hover:before {
+					left: 0%;
+					right: auto;
+					width: 100%;
+				}
+				.animated__btn:before {
+					position: absolute;
+					top: 0px;
+					right: 0px;
+					height: 100%;
+					width: 0px;
+					z-index: -1;
+					content: '';
+					color: #000 !important;
+					background: color(textColor);
+					transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+				}
+			}
 		}
 	}
 }

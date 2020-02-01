@@ -334,26 +334,35 @@ nav.active__nav {
 #carousel-projects {
 	text-align: center;
 	flex-direction: column;
+
 	.carousel-inner {
+		padding-bottom: 130px;
+
 		.carousel-item {
 			img {
 				height: 450px;
 				width: 450px;
 				object-fit: contain;
 			}
+
+			.carousel-caption {
+				bottom: -100px;
+				p {
+					margin-bottom: 5px;
+				}
+			}
 		}
 	}
 
 	.carousel-control-prev {
 		.fa-arrow-left {
-			margin-top: 100px;
+			margin-bottom: 150px;
 			color: color(textColor);
 		}
 	}
 	.carousel-control-next {
 		.fa-arrow-right {
-			margin-top: 100px;
-
+			margin-bottom: 150px;
 			color: color(textColor);
 		}
 	}

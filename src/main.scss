@@ -1,20 +1,4 @@
 // vendor CSS
-
-.carousel-inner {
-	.carousel-item {
-		img {
-			height: 500px;
-			width: 500px;
-			object-fit: contain;
-		}
-	}
-}
-
-#carouselExampleFade {
-	height: 500px;
-	width: 500px;
-}
-
 @import "~bootstrap/scss/bootstrap";
 
 // Colors
@@ -139,7 +123,7 @@ body {
 	transition: none !important;
 	animation-play-state: none !important;
 }
-// NAVIGATION (LINKS)
+//******* NAVIGATION SECTION  *****//
 nav {
 	display: none;
 	justify-content: center;
@@ -346,6 +330,36 @@ nav.active__nav {
 	}
 }
 
+//****  PROJECTS SECTION *****//
+#carousel-projects {
+	text-align: center;
+	flex-direction: column;
+	.carousel-inner {
+		.carousel-item {
+			img {
+				height: 450px;
+				width: 450px;
+				object-fit: contain;
+			}
+		}
+	}
+
+	.carousel-control-prev {
+		.fa-arrow-left {
+			margin-top: 100px;
+			color: color(textColor);
+		}
+	}
+	.carousel-control-next {
+		.fa-arrow-right {
+			margin-top: 100px;
+
+			color: color(textColor);
+		}
+	}
+}
+
+//****** KEYFRAMES  *****//
 @keyframes quoteText {
 	0% {
 		opacity: 0;

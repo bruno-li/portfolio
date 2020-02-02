@@ -4,5 +4,5 @@ Build with:
 - JavaScript
 - HTML
 - CSS
-- Saas
+- Sass
 - Webpack

@@ -404,37 +404,156 @@ nav.active__nav {
 					font-weight: 700;
 					text-align: center;
 				}
-				//  animated button reference - https://codepen.io/sazzad/pen/yNNNJG
-				.animated__btn {
-					position: relative;
-					top: 20px;
-					transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-				}
-				.animated__btn:hover {
-					color: #000 !important;
-					background-color: transparent;
-					text-shadow: nthree;
-				}
-				.animated__btn:hover:before {
-					left: 0%;
-					right: auto;
-					width: 100%;
-				}
-				.animated__btn:before {
-					position: absolute;
-					top: 0px;
-					right: 0px;
-					height: 100%;
-					width: 0px;
-					z-index: -1;
-					content: '';
-					color: #000 !important;
-					background: color(textColor);
-					transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
-				}
 			}
 		}
 	}
+}
+
+//***** CONTACT ******//
+// contact form reference - https://www.emailjs.com/docs/tutorial/creating-contact-form/
+
+#contact {
+	margin: 80px 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	h1 {
+		margin: 20px 0;
+		font-family: $font-text;
+		font-size: 50px;
+		color: color(highlightColor);
+	}
+
+	p {
+		margin: 20px 0;
+		width: 80%;
+	}
+
+	// CONTACT FORM
+	#contact-form {
+		margin: 20px 0;
+		width: 600px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: left;
+
+		@include responsive400 {
+			width: 90%;
+		}
+
+		// CONTACT INPUT FIELDS
+		div {
+			width: 100%;
+			position: relative;
+
+			label {
+				position: absolute;
+				top: 15px;
+				left: 4px;
+				transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+				pointer-events: none;
+				font-size: 15px;
+				color: color(textColor);
+			}
+
+			input {
+				width: 100%;
+				padding: 5px;
+				margin: 10px 0;
+				border: none;
+				border-bottom: 1px solid color(textColor);
+				background: none;
+				outline: none;
+				font-family: $font-text;
+				color: color(highlightColor);
+			}
+
+			// CONTACT TEXTAREA
+			textarea {
+				width: 100%;
+				margin: 45px 0 10px 0;
+				padding: 8px;
+				border: 1px solid color(textColor);
+				background: none;
+				outline-color: color(textColor);
+				color: color(textColor);
+			}
+		}
+
+		// CONTACT BUTTON
+		button {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			padding: 5px;
+			border: 1px solid color(textColor);
+			background: transparent;
+			color: color(highlightColor);
+		}
+	}
+
+	// When input and textarea are FOCUSED and with VALID input, style the labels
+	#contact-form {
+		input:focus ~ label {
+			top: -4px;
+			color: color(textColor);
+		}
+		input:valid ~ label {
+			top: -4px;
+			color: color(textColor);
+		}
+		textarea:focus ~ label {
+			color: color(textColor);
+		}
+		textarea:valid ~ label {
+			color: color(textColor);
+		}
+	}
+
+	@include responsive400 {
+		h1 {
+			font-size: 40px;
+		}
+		p {
+			padding: 10px;
+			font-size: 14px;
+		}
+	}
+}
+
+//  animated button reference - https://codepen.io/sazzad/pen/yNNNJG
+.animated__btn {
+	position: relative;
+	top: 20px;
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.animated__btn:hover {
+	color: #000 !important;
+	background-color: transparent;
+	text-shadow: nthree;
+}
+.animated__btn:hover:before {
+	left: 0%;
+	right: auto;
+	width: 100%;
+}
+.animated__btn:before {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 0px;
+	z-index: -1;
+	content: '';
+	color: #000 !important;
+	background: color(textColor);
+	transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 //****** KEYFRAMES  *****//

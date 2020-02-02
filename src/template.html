@@ -146,10 +146,35 @@
                     <span class="sr-only">Next</span>
                 </a>
             </section>
-            <div>
-                <h1>Lorem ipsum dolor sit.</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ipsum!</p>
-            </div>
+            <!-- CONTACT -->
+
+            <section id="contact">
+                <h1>CONTACT</h1>
+                <p>Coding on this section...</p>
+                <!-- CONTACT FORM -->
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <div>
+                        <input type="text" id="name_input" name="user_name" required="" value="" autocomplete="off">
+                        <label for="name_input">Your name</label>
+                    </div>
+                    <div>
+                        <input type="text" id="subject_input" name="mail_subject" required="" autocomplete="off">
+                        <label for="subject_input">Subject</label>
+                    </div>
+                    <div>
+                        <input type="email" id="email_input" name="user_email" required="" autocomplete="off">
+                        <label class="email-lbl" for="email_input">Email address</label>
+                    </div>
+                    <div>
+                        <textarea name="text" id="message_input" spellcheck="false" rows="8" required=""
+                            value=""></textarea>
+                        <label for="message_input">Message</label>
+                    </div>
+                    <button type="submit" id="submitBtn" class=" animated__btn">Send Email<i
+                            class="fas fa-envelope"></i></button>
+                </form>
+            </section>
         </div>
 
     </body>

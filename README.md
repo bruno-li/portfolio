@@ -1,4 +1,4 @@
-Personal Portlio for hosting projects.
+Personal Portfolio for hosting projects.
 
 Build with:
 - JavaScript

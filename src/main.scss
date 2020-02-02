@@ -335,6 +335,12 @@ nav.active__nav {
 	text-align: center;
 	flex-direction: column;
 
+	.github {
+		text-decoration: underline;
+		color: color(highlightColor);
+		// font-weight: 600;
+	}
+
 	.carousel-control-prev {
 		.fa-arrow-left {
 			margin-bottom: 150px;

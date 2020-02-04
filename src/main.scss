@@ -548,7 +548,7 @@ nav.active__nav {
 				margin-top: 15px;
 			}
 		}
-		@include responsive350 {
+		@include responsive400 {
 			justify-content: center;
 			.copyright {
 				margin-left: 60px;

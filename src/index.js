@@ -2,6 +2,7 @@
 // import SASS
 import './main.scss';
 import './normalize.scss';
+
 // import num from './app/app';
 
 // Remove the preload body class preventing the animations as soon as the page loads.
@@ -28,3 +29,9 @@ function displayElements() {
 		nav.classList.add('active__nav');
 	}, 50);
 }
+
+//****** SMOOTH SCROLLING SCRIPT */
+// https://github.com/cferdinandi/smooth-scroll
+const scroll = new SmoothScroll('nav a[href*="#"]', {
+	speed: 500
+});

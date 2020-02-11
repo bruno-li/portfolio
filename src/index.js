@@ -35,3 +35,17 @@ function displayElements() {
 const scroll = new SmoothScroll('nav a[href*="#"]', {
 	speed: 500
 });
+
+// Email service initialization - EmailJS
+(function() {
+	emailjs.init('user_YAKeUqQ5UyCiipjDqTqJQ');
+})();
+
+// Get form button and element for error
+const submitBtn = document.querySelector('#submitBtn');
+
+// 	// Input fields
+const name = document.querySelector('#name_input');
+const email = document.querySelector('#email_input');
+const subject = document.querySelector('#subject_input');
+const message = document.querySelector('#message_input');

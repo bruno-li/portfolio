@@ -10,6 +10,13 @@ window.addEventListener('load', () => {
 	document.body.classList.remove('preload');
 });
 
+// redirect to the top section when user reloads page
+function confirmExit() {
+	window.scrollTo(0, 0);
+	return true;
+}
+window.onbeforeunload = confirmExit;
+
 // Display and animate elements after quote animation is finished
 const quote = document.querySelector('#quote');
 const container = document.querySelector('#container');

@@ -136,7 +136,7 @@ nav {
 	background-color: color(bgColor);
 	transform: translateY(-50px);
 	opacity: 0;
-	z-index: 2;
+	z-index: 999;
 	transition: 3.2s ease;
 
 	// Nav Links

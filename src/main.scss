@@ -78,11 +78,11 @@ body {
 		animation: quoteText 3s ease forwards;
 
 		h2 {
-			font-size: 22px;
+			font-size: 26px;
 			font-weight: 400;
 		}
 		h3 {
-			font-size: 20px;
+			font-size: 24px;
 			font-weight: 400;
 		}
 		.highlighted {
@@ -98,6 +98,10 @@ body {
 	// Line height for paragraphs
 	p {
 		line-height: 1.5em;
+		font-size: 24px;
+	}
+	a {
+		font-size: 21px;
 	}
 
 	.highlighted {
@@ -106,12 +110,12 @@ body {
 		font-weight: 500;
 	}
 
-	@include responsive1920 {
-		p,
-		a {
-			font-size: 22px;
-		}
-	}
+	// @include responsive1920 {
+	// 	p,
+	// 	a {
+	// 		font-size: 22px;
+	// 	}
+	// }
 }
 
 // STOP THE ANIMATIONS FROM RUNNING ON PAGE LOAD
@@ -123,6 +127,7 @@ body {
 	transition: none !important;
 	animation-play-state: none !important;
 }
+
 //******* NAVIGATION SECTION  *****//
 nav {
 	display: none;

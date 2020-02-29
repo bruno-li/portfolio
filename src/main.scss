@@ -414,11 +414,12 @@ nav.active__nav {
 			}
 
 			.carousel-caption {
-				bottom: -125px;
+				bottom: -130px;
 				@include responsive550 {
 					position: static;
 					width: 100%;
 				}
+
 				p {
 					margin-bottom: 5px;
 				}
@@ -431,6 +432,13 @@ nav.active__nav {
 					font-size: 14px;
 					font-weight: 700;
 					text-align: center;
+				}
+				.carousel-project-desc {
+					font-size: 14px;
+
+					.desc-bold {
+						color: color(textColor);
+					}
 				}
 			}
 		}

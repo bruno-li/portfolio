@@ -17,6 +17,7 @@ $icon-height: 42px;
 
 // Querries for responsiveness
 $responsive1920: 1920px;
+$responsive800: 800px;
 $responsive600: 600px;
 $responsive550: 550px;
 $responsive400: 400px;
@@ -30,6 +31,12 @@ $responsive350: 350px;
 
 @mixin responsiveTablets {
 	@media (max-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin responsive800 {
+	@media (max-width: #{$responsive800}) {
 		@content;
 	}
 }
@@ -245,6 +252,10 @@ nav.active__nav {
 		flex-basis: 50%;
 		margin-bottom: 100px;
 		color: color(textColor);
+
+		@include responsive800 {
+			margin-top: 80px;
+		}
 
 		@include responsive550 {
 			margin-top: 70px;
